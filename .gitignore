@@ -2,3 +2,10 @@
 build
 node_modules
 npm-debug.log
+
+# assets
+assets
+
+# testing
+testing
+demo/resources/audio

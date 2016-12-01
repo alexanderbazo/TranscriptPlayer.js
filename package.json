@@ -8,9 +8,15 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/**.js",
-    "build:js": "uglifyjs src/transcriptplayer.js --compress -o build/transcriptplayer.min.js",
-    "build": "npm run build:js",
+    "build:js": "uglifyjs src/transcript-player.js --compress --mangle -o build/transcript-player.min.js",
+    "build:css": "cp src/transcript-player.css build/transcript-player.css",
+    "build": "npm run build:js && npm run build:css && npm run showbuildresult",
+    "showbuildresult": "du -h build/transcript-player.min.js",
     "prebuild:js": "npm run lint",
+    "demo:js": "cp build/transcript-player.min.js demo/vendors/transcript-player/transcript-player.min.js",
+    "demo:css": "cp build/transcript-player.css demo/vendors/transcript-player/transcript-player.css",
+    "demo:fonts": "cp assets/fonts/winjs-symbols.woff demo/vendors/transcript-player/winjs-symbols.woff",
+    "demo": "npm run build && npm run demo:js && npm run demo:css && npm run demo:fonts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexander Bazo <alexanderbaz@googlemail.com>",
