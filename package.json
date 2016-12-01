@@ -1,0 +1,22 @@
+{
+  "name": "transcriptplayer.js",
+  "version": "0.0.1",
+  "config": {
+    "source_code_header": "/* TranscriptPlayer by Alexander Bazo <alexanderbazo@googlemail.com> */"
+  },
+  "description": "A Javascript audio player to view and listen to aligned audio and text files",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/**.js",
+    "build:js": "uglifyjs src/transcriptplayer.js --compress -o build/transcriptplayer.min.js",
+    "build": "npm run build:js",
+    "prebuild:js": "npm run lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Bazo <alexanderbaz@googlemail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "uglify-js": "^2.7.5"
+  }
+}
