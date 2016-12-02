@@ -116,6 +116,9 @@
     event.target.classList.toggle("muted");
     if (event.target.classList.contains("unmuted")) {
       eventType = "unmute";
+      this.audioPlayer.muted = false;
+    } else {
+      this.audioPlayer.muted = true;
     }
     this.notifyAll(eventType);
   };
